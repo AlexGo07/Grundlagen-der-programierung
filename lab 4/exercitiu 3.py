@@ -5,8 +5,7 @@ def Comp():
     return pc
 def Player():
     while True:
-        p1 = input('Wahle(Stein,Papier,Schere):')
-        p1 = input().strip().capitalize()
+        p1 = input('Wahle(Stein,Papier,Schere):').strip().capitalize()
         if p1 in ['Schere','Papier','Stein']:
             return p1
         else:
