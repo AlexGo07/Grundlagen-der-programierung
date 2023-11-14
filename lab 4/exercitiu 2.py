@@ -1,4 +1,11 @@
 def ersetzung(dateipfad,Ersatzwort,Wort):
+    '''
+
+    :param dateipfad:
+    :param Ersatzwort:
+    :param Wort:
+    :return:
+    '''
     with open(dateipfad,'r') as date:
         text = date.read()
         text1 = text.replace(Ersatzwort,Wort)
@@ -6,12 +13,14 @@ def ersetzung(dateipfad,Ersatzwort,Wort):
     with open(dateipfad,'w') as date:
         date.write(text1)
     if cont > 0:
-        print(f"{Ersatzwort} durch {Wort} an {cont} stellen")
+        return cont
     else:
-       print("Die Ersetzung wurde nicht ervollbar")
+       return 0
 def main():
+
     dateipfad = 'meine_datei.txt'
-    Wort = 'Hund'
-    Ersatzwort = 'Katze'
-    ersetzung(dateipfad,Ersatzwort,Wort)
+    Wort = input('Wort:')
+    Ersatzwort = input('Ersatzwort:')
+    cont = ersetzung(dateipfad,Ersatzwort,Wort)
+    print(f"{Ersatzwort} durch {Wort} an {cont} stellen")
 main()
