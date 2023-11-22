@@ -644,8 +644,7 @@ characters = {
     '#': endline,
     ' ': space
 }
-def draw_text(t, text):
-    for character in text:
-        func = characters[character]
+def draw_text(t, ch):
+        func = characters[ch]
         if func:
             func(t)
